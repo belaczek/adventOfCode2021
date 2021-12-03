@@ -20,12 +20,12 @@ const testData = `199
 260
 263`;
 
-Deno.test("stage1", () => {
+Deno.test("day-01 stage1", () => {
   assertEquals(stage1(testData), 7);
   assertEquals(stage1(data), 1195);
 });
 
-Deno.test("stage2", () => {
+Deno.test("day-01 stage2", () => {
   assertEquals(stage2(testData), 5);
   assertEquals(stage2(data), 1235);
 });
