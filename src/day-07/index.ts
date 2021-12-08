@@ -13,10 +13,6 @@ export function stage1(input: string) {
   return totalDistance;
 }
 
-function sumOfSeries(length: number) {
-  return length * ((length + 1) / 2);
-}
-
 export function stage2(input: string) {
   const crabPositions = input.split(",").map(Number);
 
@@ -27,7 +23,13 @@ export function stage2(input: string) {
 
   for (let i = start; i < end; i++) {
     const totalFuel = crabPositions
-      .map((position) => sumOfSeries(Math.abs(position - i)))
+      .map((position) => {
+        const diff = Math.abs(position - i);
+
+        // Calculate sum of arithmetic series
+        const fuelConsumtion = diff * ((diff + 1) / 2);
+        return fuelConsumtion;
+      })
       .reduce((acc, curr) => acc + curr, 0);
 
     fuel.push(totalFuel);

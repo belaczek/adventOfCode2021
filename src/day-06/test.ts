@@ -11,12 +11,12 @@ const data = Deno.readTextFileSync(join(directory, "./input.txt"));
 
 const testData = `3,4,3,1,2`;
 
-Deno.test("day-05 stage1", () => {
+Deno.test("day-06 stage1", () => {
   assertEquals(stage1(testData), 5934);
   assertEquals(stage1(data), 391888);
 });
 
-Deno.test("day-05 stage2", () => {
+Deno.test("day-06 stage2", () => {
   assertEquals(stage2(testData), 26984457539);
   assertEquals(stage2(data), 1754597645339);
 });
